@@ -1,0 +1,65 @@
+/* 
+   Localizable.strings
+   Army
+
+   Created by 小苏 on 11-6-24.
+   Copyright 2011 __MyCompanyName__. All rights reserved.
+*/
+
+menu_show_menu          ="菜单";
+menu_hide_menu          ="隐藏菜单";
+menu_multiplayer        ="继续游戏";
+menu_scores             ="评分";
+menu_setting            ="设置";
+menu_about              ="关于";
+menu_exit               ="退出";
+
+
+//----------game type--------
+game_type_classic_title         ="经典模式";
+game_type_classic_msg           ="60秒";
+
+game_type_classic_level_title         ="经典模式(闯关)";
+game_type_classic_level_msg           ="30秒";
+
+game_type_one_tap_title         ="速度模式";
+game_type_one_tap_msg           ="60秒";
+
+game_type_one_tap_level_title         ="速度模式(闯关)";
+game_type_one_tap_level_msg           ="30秒";
+
+game_type_endless_title          ="自由模式";
+game_type_endless_msg           ="没有时间限制";
+
+
+//----------level goal--------
+level           ="关卡";
+goal            ="目标";
+score           ="分数";
+top             ="最高分";
+
+
+//-------------setting-----------
+open            ="开启";
+close           ="关闭";
+clear           ="清空数据";
+cleared         ="已清空";
+clear_title     ="数据";
+audio_title     ="声音";
+setting         ="设置";
+dark_theme      ="夜晚模式";
+
+
+//-------------图片-----------
+pic_play_now            ="play_now_z.png";
+pic_play_now_select     ="play_now_unselect_z.png";
+pic_resume              ="resume_z.png";
+pic_resume_select       ="resume_unselect_z.png";
+pic_restart             ="restart_z.png";
+pic_restart_select      ="restart_unselect_z.png";
+pic_exit                ="exit_z.png";
+pic_exit_select         ="exit_unselect_z.png";
+pic_level_goal          ="level_goal_z.png";
+pic_toppest             ="toppest_z.png";
+
+//需要保留最后一行有一个空行
