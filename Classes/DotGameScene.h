@@ -5,8 +5,12 @@
 
 USING_NS_CC;
 
-class DotGameScene : public cocos2d::CCLayer
+
+class DotGameScene : public cocos2d::CCLayerColor
 {
+    
+    
+    CCSprite *logo;
     
     CCLabelTTF * label_gametype_0;
     CCLabelTTF * label_gametype_00;
@@ -29,7 +33,9 @@ class DotGameScene : public cocos2d::CCLayer
     CCMenuItemLabel * m_settings;
     CCMenuItemLabel * m_aboutus;
     
-    bool isAllMenuShowed = false;
+    CCMenuItemLabel * m_exit;
+    
+    bool isAllMenuShowed;
     
     //屏幕尺寸
     CCSize visibleSize;
@@ -46,20 +52,37 @@ public:
     CREATE_FUNC(DotGameScene);
     
     
+    void animInitMenuAndLogo();//logo和menu第一次出现的动画
+    
     // selector callback
     void menuGameType0Callback(CCObject* pSender);
     void menuGameType1Callback(CCObject* pSender);
     void menuGameType2Callback(CCObject* pSender);
     
     void menuPlayNowCallback(CCObject* pSender);
-    void menuMultiPlayerCallback(CCObject* pSender);
+    void playNowSchedule();
+    
+    void menuContinueCallback(CCObject* pSender);
+    void continueSchedule();
+    
     void menuHighScoreCallback(CCObject* pSender);
     void menuSettingCallback(CCObject* pSender);
+    void settingSchedule();
     void menuAboutUsCallback(CCObject* pSender);
+    
+    void menuExitCallback(CCObject* pSender);
     
     void menuShowMoreMenuCallback(CCObject* pSender);
     
     void showAllMenus(bool showAllMenus);
+    void hideAllItems();
+    
+    void setGameType();
+    
+    void animGameType0();
+    void animGameType1();
+    void animGameType2();
+    
 };
 
 #endif // __DOTGAME_SCENE_H__

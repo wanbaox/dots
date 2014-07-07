@@ -8,8 +8,11 @@
 
 USING_NS_CC;
 
-class DotPlayingScene : public cocos2d::CCLayer
+class DotPlayingScene : public cocos2d::CCLayerColor
 {
+    
+public:
+    
     
     DotHudController * m_hudController;
 
@@ -23,15 +26,20 @@ class DotPlayingScene : public cocos2d::CCLayer
     
     bool m_pause;
     
+    int m_level;
+    
 public:
+    
+    DotPlayingScene();
+	~DotPlayingScene();
     
     virtual bool init();  
 
-    static cocos2d::CCScene* scene();
+    static cocos2d::CCScene* scene(bool isContinueGame);
     
     CREATE_FUNC(DotPlayingScene);
     
-    void startDotGame();
+    void startDotGame(bool isReStart);
     
     void startTimerCounter();
     
@@ -43,6 +51,12 @@ public:
     void resumeGame();
     
     void tick(float dt);
+    
+    long getCurrrentGoal(int level);
+    
+    void gotoNextLevel();
+    void gameFailed();
+    void gameNormalEnded();
     
 };
 

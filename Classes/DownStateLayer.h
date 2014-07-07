@@ -18,7 +18,6 @@ USING_NS_CC;
 class DownStateLayer : public cocos2d::CCLayerColor {
     
     
-    
 public:
     
     DownStateLayer();
@@ -29,6 +28,8 @@ public:
     CREATE_FUNC(DownStateLayer);
     
     void startAnimationDisplay();
+    
+    void moveOut();
     
     void skillThreePressed();
     void skillTwoPressed();

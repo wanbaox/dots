@@ -39,7 +39,16 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>
-	<array/>
+	<array>
+		<string>Josefin Sans.ttf</string>
+		<string>Josefin Sans Bold.ttf</string>
+	</array>
+	<key>UIPrerenderedIcon</key>
+	<true/>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
+	<key>UIStatusBarHidden</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -15,7 +15,7 @@ USING_NS_CC;
 
 class PauseLayer : public cocos2d::CCLayerColor {
     
-    
+//    CCLayerColor*bgLayer;
     CCMenuItemImage * m_resume;
     CCMenuItemImage * m_restart;
     CCMenuItemImage * m_exittomain;
@@ -30,11 +30,13 @@ public:
     CREATE_FUNC(PauseLayer);
     
     void startAnimationDisplay();
+    void moveOut(bool isExitToMainPage);
     
     void exitToMainScnen();
     void restartDotGame();
     void resumeDotGame();
     
+    void replaceScene();
 };
 
 #endif

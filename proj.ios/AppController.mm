@@ -3,6 +3,7 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "CCiAd.h"
 
 @implementation AppController
 
@@ -28,11 +29,15 @@ static AppDelegate s_sharedApplication;
                                    multiSampling: NO
                                  numberOfSamples: 0];
 
+    
     // Use RootViewController manage EAGLView 
     viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
     viewController.wantsFullScreenLayout = YES;
     viewController.view = __glView;
 
+    CCiAd::view = __glView;
+    CCiAd::viewController = viewController;
+    
     // Set RootViewController to window
     if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
     {
@@ -75,6 +80,7 @@ static AppDelegate s_sharedApplication;
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
+    
     cocos2d::CCApplication::sharedApplication()->applicationDidEnterBackground();
 }
 
@@ -82,6 +88,7 @@ static AppDelegate s_sharedApplication;
     /*
      Called as part of  transition from the background to the inactive state: here you can undo many of the changes made on entering the background.
      */
+    
     cocos2d::CCApplication::sharedApplication()->applicationWillEnterForeground();
 }
 

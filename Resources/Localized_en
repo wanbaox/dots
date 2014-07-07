@@ -1,0 +1,66 @@
+/* 
+   Localizable.strings
+   Army
+
+   Created by 小苏 on 11-6-24.
+   Copyright 2011 __MyCompanyName__. All rights reserved.
+*/
+
+//----------menu--------
+menu_show_menu          ="Menu";
+menu_hide_menu          ="Hide Menu";
+menu_multiplayer        ="Continue";
+menu_scores             ="Rate";
+menu_setting            ="Settings";
+menu_about              ="About";
+menu_exit               ="Exit";
+
+
+//----------game type--------
+game_type_classic_title         ="Classic";
+game_type_classic_msg           ="60s";
+
+game_type_classic_level_title         ="Classic(level)";
+game_type_classic_level_msg           ="30s";
+
+game_type_one_tap_title         ="TapTapTap";
+game_type_one_tap_msg           ="60s";
+
+game_type_one_tap_level_title         ="TapTapTap(level)";
+game_type_one_tap_level_msg           ="30s";
+
+game_type_endless_title          ="Endless";
+game_type_endless_msg           ="no time limit";
+
+
+//----------level goal--------
+level           ="Level";
+goal            ="Goal";
+score           ="Score";
+top             ="High Score";
+
+
+//-------------setting-----------
+open            ="OPEN";
+close           ="CLOSE";
+clear           ="Clear Data";
+cleared         ="Cleared";
+clear_title     ="Data";
+audio_title     ="Audio";
+setting         ="Setting";
+dark_theme      ="Dark Theme";
+
+
+//-------------图片-----------
+pic_play_now            ="play_now.png";
+pic_play_now_select     ="play_now_unselect.png";
+pic_resume              ="resume.png";
+pic_resume_select       ="resume_unselect.png";
+pic_restart             ="restart.png";
+pic_restart_select      ="restart_unselect.png";
+pic_exit                ="exit.png";
+pic_exit_select         ="exit_unselect.png";
+pic_level_goal          ="level_goal.png";
+pic_toppest             ="toppest.png";
+
+//the last line must have a blank line when I test this example

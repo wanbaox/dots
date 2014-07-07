@@ -3,6 +3,9 @@
 
 @interface RootViewController : UIViewController {
 
+    
 }
+
++(RootViewController*)getInstance;
 
 @end

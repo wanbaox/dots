@@ -8,6 +8,7 @@
 
 #include "IntroLayer.h"
 #include "DotGameScene.h"
+#include "AudioHelper.h"
 
 CCScene* IntroLayer::scene()
 {
@@ -34,6 +35,8 @@ bool IntroLayer::init()
         return false;
     }
     
+    AudioHelper::loadEffectSounds();
+    
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
     
@@ -50,10 +53,14 @@ bool IntroLayer::init()
     
     // add the sprite as a child to this layer
     this->addChild(background, 0);
-
+    
+    
     
     return true;
 }
+
+
+
 
 void IntroLayer::onEnter()
 {

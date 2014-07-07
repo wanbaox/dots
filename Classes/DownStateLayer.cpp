@@ -21,7 +21,7 @@ bool DownStateLayer::init()
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
     
-    if (!CCLayerColor::initWithColor(ccc4(198, 203, 206, 255),origin.x+visibleSize.width,60)) {
+    if (!CCLayerColor::initWithColor(Color_Up_Down,origin.x+visibleSize.width,BottomHeight)) {
         
         return false;
     }
@@ -29,42 +29,35 @@ bool DownStateLayer::init()
     this->setAnchorPoint(ccp(0,0));
                          
     
-    CCMenuItemImage * skillOne = CCMenuItemImage::create("skillbutton.png", "skillButton_unselect.png",this, menu_selector(DownStateLayer::skillOnePressed));
     
-     CCMenuItemImage * skillTwo = CCMenuItemImage::create("skillbutton.png", "skillButton_unselect.png",this, menu_selector(DownStateLayer::skillTwoPressed));
-    
-     CCMenuItemImage * skillThree = CCMenuItemImage::create("skillbutton.png", "skillButton_unselect.png",this, menu_selector(DownStateLayer::skillThreePressed));
-    
-    skillOne->setAnchorPoint(ccp(0, 0));
-    skillTwo->setAnchorPoint(ccp(0.5, 0));
-    skillThree->setAnchorPoint(ccp(1, 0));
-    
-    skillOne->setPosition(ccp(0, 0));
-    skillTwo->setPosition(ccp((origin.x+visibleSize.width)/2, 0));
-    skillThree->setPosition(ccp(origin.x+visibleSize.width, 0));
-    
-    
-    
-    CCMenu * menu = CCMenu::create(skillOne,skillTwo,skillThree,NULL);
-    menu->setPosition(ccp(0, 17));
-    this->addChild(menu);
-    this->setVisible(false);
-    
+
     return true;
 }
 
+
 void DownStateLayer::startAnimationDisplay(){
     
+    
     this->setAnchorPoint(ccp(0, 0));
-    this->setPosition(ccp(0, -60));
+    this->setPosition(ccp(0, -BottomHeight));
     
     this->setVisible(true);
     
-    CCMoveTo * moveTo1 = CCMoveTo::create(0.2, ccp(0, 0));
+    CCMoveBy* moveTo2 = CCMoveBy::create(0.2, ccp(0,BottomHeight));
     
-    CCMoveTo * moveTo2 = CCMoveTo::create(0.2, ccp(0,-17));
+    this->runAction(CCSequence::create(CCEaseBackOut::create(moveTo2),NULL));
     
-    this->runAction(CCSequence::create(moveTo1,moveTo2,NULL));
+}
+
+//隐藏的动画
+void DownStateLayer::moveOut(){
+    
+    
+    this->setVisible(true);
+    
+    CCMoveBy* moveTo2 = CCMoveBy::create(0.2, ccp(0,-BottomHeight));
+    
+    this->runAction(CCSequence::create(CCEaseBackIn::create(moveTo2),NULL));
     
 }
 

@@ -4,6 +4,7 @@
 #include "SimpleAudioEngine.h"
 #include "DotPlayingScene.h"
 #include "DataController.h"
+#include "config.h"
 
 TopScoreLayer::TopScoreLayer()
 {
@@ -36,7 +37,7 @@ bool TopScoreLayer::init()
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
     
-    if (!CCLayerColor::initWithColor(ccc4(100, 100, 100, 255))) {
+    if (!CCLayerColor::initWithColor(Color_Bg)) {
         
         return false;
     }
@@ -175,7 +176,7 @@ void TopScoreLayer::imageItemPressed(){
     
     if (m_imageButtonResponseType) {
         
-        CCScene * playingScene = DotPlayingScene::scene();
+        CCScene * playingScene = DotPlayingScene::scene(false);
         
         CCDirector::sharedDirector()->replaceScene(CCTransitionMoveInR::create(0.2, playingScene));
         

@@ -3,6 +3,13 @@
 
 @implementation RootViewController
 
+RootViewController * instance;
+
++(RootViewController*)getInstance
+{
+
+    return instance;
+}
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -19,13 +26,16 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    instance = self;
+    NSLog(@"view did load");
 }
  
-*/
+
 // Override to allow orientations other than the default portrait orientation.
 // This method is deprecated on ios6
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -66,6 +76,5 @@
 - (void)dealloc {
     [super dealloc];
 }
-
 
 @end
